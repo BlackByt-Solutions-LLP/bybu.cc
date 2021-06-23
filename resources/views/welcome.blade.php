@@ -39,7 +39,7 @@
                 </div>
                 <div class="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
                     <button class="bg-gray-800 p-1 rounded-full text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white">
-                        <span class="sr-only">All notifications</span>
+                        <span class="sr-only">View notifications</span>
                         <!-- Heroicon name: outline/bell -->
                         <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9" />
@@ -105,6 +105,49 @@
         </div>
     </div>
 
+
+    <div class="center-area py-28">
+        <div class="hero-area flex justify-center items-center h-full">
+            <div class="text-gray-300 w-1/2">
+                <div class="text-6xl font-bold mb-10">One Link, <br> For Everything</div>
+                <div class="text-xl mb-10">Combine all your content into one link.</div>
+                <div class="text-xl mb-10">Share multiple links at once in a beautiful way and track its performance.</div>
+                <div class="flex gap-8">
+                    <a href="#" class="rounded-full py-6 px-12 bg-gradient-to-r from-red-700 via-red-500 to-red-600">Start Now</a>
+                </div>
+            </div>
+            <div class="relative px-20">
+                <div class="screen w-80 p-3 rounded-lg h-full bg-gray-100" style="backdrop-filter: blur(40px);">
+                    <div class="flex justify-between bg-white mt-4 shadow-xl rounded-lg p-2 mb-2">
+                        <div><img class="h-12 w-12 rounded-full border-2 border-gray-300" src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80" alt=""></div>
+                        <div>
+                            <div class="text-right">Jane Dyana</div>
+                            <div class="text-gray-400 italic">CEO at milkyjahe</div>
+                        </div>
+                    </div>
+                    <div class="flex justify-between bg-white mt-4 shadow-xl rounded-lg p-2 mb-2">
+                        <img src="{{asset('images/4.jpg')}}">
+                    </div>
+                    <div class="text-center mt-5 mb-4">
+                        <button class="px-4 py-2 rounded-full text-white text-sm bg-gradient-to-r from-red-700 via-red-500 to-red-600">Shop Now</button>
+                    </div>
+                    <div class="mb-2">
+                        <img src="{{asset('images/social.png')}}">
+                    </div>
+                </div>
+                <div class="float-links">
+                    <button class="absolute top-0 left-0">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path d="M12 14l9-5-9-5-9 5 9 5z" />
+                            <path d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z" />
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 14l9-5-9-5-9 5 9 5zm0 0l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14zm-4 6v-7.5l4-2.222" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <!-- Footer area -->
     <footer>
         <div class="flex max-w-7xl mx-auto py-12 justify-between">
@@ -124,14 +167,11 @@
                     Email:  business@blackbyt.com
                 </div>
                 <div>
-                    <a href="#">fb</a>
-                    <a href="#">twt</a>
-                    <a href="#">you</a>
-                    <a href="#">insta</a>
+                    <img src="{{asset('images/social.png')}}">
                 </div>
             </div>
         </div>
-        <div class="flex justify-between max-w-7xl mx-auto">
+        <div class="flex justify-between max-w-7xl mx-auto py-3">
             <div class="flex text-gray-300">&copy; 
                 2021 with 
                 <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-red-500 mx-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
