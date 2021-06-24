@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\PagesController;
 
 /*
 |--------------------------------------------------------------------------
@@ -22,3 +23,13 @@ Route::get('/dashboard', function () {
 })->middleware(['auth'])->name('dashboard');
 
 require __DIR__.'/auth.php';
+
+Route::get('calender', [PagesController::class, 'calender'])->name('calender');
+
+Route::get('dashboard', [PagesController::class, 'dashboard'])->name('dashboard');
+
+Route::get('team', [PagesController::class, 'team'])->name('team');
+
+Route::get('project', [PagesController::class, 'project'])->name('project');
+
+Route::get('wecome', [PagesController::class, 'welcome'])->name('welcome');
