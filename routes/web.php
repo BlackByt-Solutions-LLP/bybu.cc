@@ -32,4 +32,6 @@ Route::get('team', [PagesController::class, 'team'])->name('team');
 
 Route::get('project', [PagesController::class, 'project'])->name('project');
 
-Route::get('wecome', [PagesController::class, 'welcome'])->name('welcome');
+Route::get('welcome', [PagesController::class, 'welcome'])->name('welcome');
+
+// Route::get('login', [PagesController::class, 'login'])->name('login');
