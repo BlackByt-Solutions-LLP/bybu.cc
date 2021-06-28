@@ -46,11 +46,12 @@
                     <a href="#" class="text-sm bg-red-600 px-4 py-1 rounded-md">Share</a>
                 </div>
 
-                <div class="w-3/4 mx-auto h-4/5">
-                    <div class="border-2 border-gray-200 rounded-3xl h-full mt-3 p-3">
+                <div class="w-3/5 mx-auto h-3/4 pt-20">
+                    <div class="border-2 border-gray-200 rounded-3xl h-full p-3">
                         <h3 class="text-white text-center">@Diah122</h3>
                     </div>
                 </div>
+
             </div> 
 
         </div>
