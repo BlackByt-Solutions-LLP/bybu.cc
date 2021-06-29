@@ -6,16 +6,20 @@
 
             @include('pages.sidebar')
 
-            <div class="w-4/6  h-screen space-x-8 bg-gray-800">
+            <div class="w-4/6 h-screen bg-gray-800">
                 <div class="space-x-8 border-b-2 border-gray-700 flex px-8">
-                    <a class="border-b-4 border-red-500  py-5" href="{{route('dashboard')}}">Dashboard</a>
+                    <a class="py-5" href="{{route('dashboard')}}">Dashboard</a>
                     <a class="py-5">Appearance</a>
-                    <a class="py-5" href="{{route('setting')}}">Settings</a>
+                    <a class="border-b-4 border-red-500 py-5">Settings</a>
                     <a class="py-5">Pro</a>
                 </div>
-                <div class="mt-5 justify-center">
-                    <button type="submit" class="bg-white text-black w-2/3 rounded-lg p-3 mt-10 mx-10">Add new link</button>
-                    <button type="submit" class="bg-white text-black w-20 rounded-lg p-3 mt-10 -mx-8">Link</button>
+
+                <div class="mt-20 flex gap-5 px-8">
+                    <div class="bg-white text-black w-full rounded-lg px-8 flex items-center">
+                        <div class="">https://bybu.cc</div>
+                        <input type="text" placeholder="/username" class="w-full outine-none border-none focus:outline-none">
+                    </div>
+                    <button type="submit" class="bg-red-600  text-white rounded-lg w-full">Set Link</button>
                 </div>
             </div>
 

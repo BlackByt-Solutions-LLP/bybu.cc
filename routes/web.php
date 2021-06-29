@@ -24,13 +24,9 @@ Route::get('/dashboard', function () {
 
 require __DIR__.'/auth.php';
 
-Route::get('calender', [PagesController::class, 'calender'])->name('calender');
+Route::get('setting', [PagesController::class, 'setting'])->name('setting');
 
 Route::get('dashboard', [PagesController::class, 'dashboard'])->name('dashboard');
-
-Route::get('team', [PagesController::class, 'team'])->name('team');
-
-Route::get('project', [PagesController::class, 'project'])->name('project');
 
 Route::get('welcome', [PagesController::class, 'welcome'])->name('welcome');
 
