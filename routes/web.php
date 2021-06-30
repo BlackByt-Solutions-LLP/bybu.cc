@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\UserController;
 use App\Http\Controllers\PagesController;
 
 /*
@@ -26,8 +27,8 @@ require __DIR__.'/auth.php';
 
 Route::get('setting', [PagesController::class, 'setting'])->name('setting');
 
-Route::get('dashboard', [PagesController::class, 'dashboard'])->name('dashboard');
+Route::get('dashboard', [PagesController::class, 'dashboard'])->name('dashboard')->middleware(['auth']);
 
 Route::get('welcome', [PagesController::class, 'welcome'])->name('welcome');
 
-// Route::get('login', [PagesController::class, 'login'])->name('login');
+Route::put('update', [UserController::class, 'updateAccount'])->name('updateAccount');

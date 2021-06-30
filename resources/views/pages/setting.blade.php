@@ -6,26 +6,79 @@
 
             @include('pages.sidebar')
 
-            <div class="w-4/6 h-screen bg-gray-800">
-                <div class="space-x-8 border-b-2 border-gray-700 flex px-8">
-                    <a class="py-5" href="{{route('dashboard')}}">Dashboard</a>
-                    <a class="py-5">Appearance</a>
-                    <a class="border-b-4 border-red-500 py-5">Settings</a>
-                    <a class="py-5">Pro</a>
+            <div class="w-4/6 h-screen bg-gray-800 overflow-y-auto">
+
+                <div class="space-x-8 border-b-2 border-gray-700 flex px-8 h-16">
+                    <a class="items-center flex" href="{{route('dashboard')}}">Dashboard</a>
+                    <a class="items-center flex">Appearance</a>
+                    <a class="items-center flex border-b-4 border-red-700" href="{{route('setting')}}">Settings</a>
+                    <a class="items-center flex">Pro</a>
                 </div>
 
-                <div class="mt-20 flex gap-5 px-8">
-                    <div class="bg-white text-black w-full rounded-lg px-8 flex items-center">
-                        <div class="">https://bybu.cc</div>
-                        <input type="text" placeholder="/username" class="w-full outine-none border-none focus:outline-none">
+                <div class="details w-3/4 mx-auto py-20">
+                    <div class="avatar flex items-center">
+                        <img class="h-32 w-32 rounded-full shadow-xl border-2" src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80" alt="">
+                        <div class="ml-8">
+                            <div class="text-2xl">{{$user->name}}</div>
+                            <div class="text-gray-400">https://bybu.cc/{{$user->link}}</div>
+                        </div>
                     </div>
-                    <button type="submit" class="bg-red-600  text-white rounded-lg w-full">Set Link</button>
+
+                    <div class="my-16">
+                        <!-- Check URL -->
+                        <form action="{{route('updateAccount', $user->id)}}" method="POST" class="w-full mb-12">
+                            @csrf
+                            @method('PUT')
+                            <div class="field-group flex gap-5">
+                                <div class="bg-white w-9/12 text-black rounded-lg flex items-center @error('slug') border-2 border-red-500 @enderror">
+                                    <div class="pl-3">https://bybu.cc/</div>
+                                    <input type="text" placeholder="username" value="{{$user->slug}}" name="slug" class="py-3 w-full rounded-lg outine-none border-none focus:outline-none focus:border-none focus:ring-0">
+                                </div>
+                                <button type="submit" class="bg-red-600 py-3 text-white rounded-lg w-full">Set URL</button>
+                            </div>
+                            @error('slug')
+                                <div class="mt-1 text-gray-500">Username not available</div>
+                            @enderror
+                        </form>
+                        
+                        <!-- Update Details -->
+                        <h2 class="mb-4 border-l-4 border-red-600 pl-3 text-gray-300">UPDATE ACCOUNT</h2>
+                        <form action="{{route('updateAccount', $user->id)}}" method="POST" class="w-full">
+                            @csrf
+                            @method('PUT')
+                            <div class="grid gap-4 grid-cols-2">
+                                <div class="field-group">
+                                    <label class="text-gray-400">Name</label>
+                                    <input type="text" placeholder="You Name" name="name" value="{{$user->name}}" class="text-gray-800 w-full py-3 rounded-lg outine-none border-none focus:ring-0">
+                                </div>
+                                <div class="field-group">
+                                    <label class="text-gray-400">Email</label>
+                                    <input type="email" placeholder="name@company.com" name="email" value="{{$user->email}}" class="text-gray-800  w-full py-3 rounded-lg outine-none border-none focus:ring-0">
+                                </div>
+                                <div class="field-group">
+                                    <label class="text-gray-400">Contact Number</label>
+                                    <input type="text" placeholder="91-9988776655" value="{{$user->mobile}}" name="mobile" class="text-gray-800 w-full py-3 rounded-lg outine-none border-none focus:ring-0">
+                                </div>
+                                <div class="field-group">
+                                    <label class="text-gray-400">Website (if any)</label>
+                                    <input type="text" placeholder="www.website.com" value="{{$user->website}}" name="website" class="text-gray-800 w-full py-3 rounded-lg outine-none border-none focus:ring-0">
+                                </div>
+                            </div>
+
+                            <button type="submit" class="bg-red-600 py-3 text-white rounded-lg w-full mt-8">Save Updates</button>
+                        </form>
+                    </div>
                 </div>
+
             </div>
 
             <div class="h-screen w-1/3 bg-gray-900">
                 <div class="flex p-5 justify-between items-center bg-gray-800 h-16">
-                    <div>My link:http://linkr.ee/diah122</div>
+                    <div class="border-2 border-gray-700 rounded-md py-1"> 
+                        <span class="bg-gray-700 px-4 py-2 rounded-md">Your link</span>
+                        <span class="ml-2 pl-4 py-1">https://bybu.cc/ </span>
+                        <span class="text-red-500 pr-5 font-bold py-1">{{$user->slug}}</span>
+                    </div>
                     <a href="#" class="text-sm bg-red-600 px-4 py-1 rounded-md">Share</a>
                 </div>
 

@@ -7,12 +7,14 @@
             @include('pages.sidebar')
 
             <div class="w-4/6  h-screen space-x-8 bg-gray-800">
-                <div class="space-x-8 border-b-2 border-gray-700 flex px-8">
-                    <a class="border-b-4 border-red-500  py-5" href="{{route('dashboard')}}">Dashboard</a>
-                    <a class="py-5">Appearance</a>
-                    <a class="py-5" href="{{route('setting')}}">Settings</a>
-                    <a class="py-5">Pro</a>
+
+                <div class="space-x-8 border-b-2 border-gray-700 flex px-8 h-16">
+                    <a class="items-center flex border-b-4 border-red-700" href="{{route('dashboard')}}">Dashboard</a>
+                    <a class="items-center flex">Appearance</a>
+                    <a class="items-center flex" href="{{route('setting')}}">Settings</a>
+                    <a class="items-center flex">Pro</a>
                 </div>
+
                 <div class="mt-5 justify-center">
                     <button type="submit" class="bg-white text-black w-2/3 rounded-lg p-3 mt-10 mx-10">Add new link</button>
                     <button type="submit" class="bg-white text-black w-20 rounded-lg p-3 mt-10 -mx-8">Link</button>
@@ -27,10 +29,10 @@
 
                 <div class="w-3/5 mx-auto h-3/4 pt-20">
                     <div class="border-4 border-gray-200 rounded-3xl h-full p-3" style="background: url('/images/bg.jpg');background-size: cover; " >
-                        <img class="h-32 w-32 rounded-full shadow-xl" src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80" alt="">
-                        <div class="font-bold mt-3 pl-4">Vimal Bharti</div>
+                        <img class="h-32 w-32 rounded-full shadow-xl" src="/images/avatar/{{ $user->avatar }}" alt="">
+                        <div class="font-bold mt-3 pl-4">{{ $user->name }}</div>
 
-                        <div class="social-links mt-4 grid grid-cols-2 gap-4 h-2/4 overflow-scroll">
+                        <div class="social-links mt-4 grid grid-cols-2 gap-4 h-2/4">
                             <a href="#" class="h-full bg-indigo-500 bg-opacity-50 rounded-lg flex justify-center items-center">
                                 <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2zM9 9h6v6H9V9z" />
