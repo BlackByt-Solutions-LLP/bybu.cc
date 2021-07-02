@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -21,8 +22,9 @@ class PagesController extends Controller
         return view('welcome');
     }
 
-    
-    
+    public function profile(User $slug){
+        return view('profile', compact('slug'));
+    }
     
 
 }

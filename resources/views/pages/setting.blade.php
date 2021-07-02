@@ -17,10 +17,25 @@
 
                 <div class="details w-3/4 mx-auto py-20">
                     <div class="avatar flex items-center">
-                        <img class="h-32 w-32 rounded-full shadow-xl border-2" src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80" alt="">
+
+                        <form action="{{route('updateAvatar', $user->id)}}" method="POST" class="relative" enctype="multipart/form-data">
+                            @csrf
+                            @method('PUT')
+                            <img class="h-36 w-36 rounded-full shadow-xl border-4 border-gray-300" src="/avatars/{{$user->avatar}}" alt="{{$user->name}}">
+                            <div class="absolute top-0 right-0 bg-gray-700 bg-opacity-75 hover:bg-opacity-100 rounded-full p-2 cursor-pointer">
+                                <label for="avatar" class="cursor-pointer">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-gray-200" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 9a2 2 0 012-2h.93a2 2 0 001.664-.89l.812-1.22A2 2 0 0110.07 4h3.86a2 2 0 011.664.89l.812 1.22A2 2 0 0018.07 7H19a2 2 0 012 2v9a2 2 0 01-2 2H5a2 2 0 01-2-2V9z" />
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 13a3 3 0 11-6 0 3 3 0 016 0z" />
+                                    </svg>
+                                </label>
+                                <input type="file" name="avatar" id="avatar" class="hidden" onchange="form.submit()">
+                            </div>
+                        </form>
+
                         <div class="ml-8">
                             <div class="text-2xl">{{$user->name}}</div>
-                            <div class="text-gray-400">https://bybu.cc/{{$user->link}}</div>
+                            <div class="text-gray-400">https://bybu.cc/{{$user->slug}}</div>
                         </div>
                     </div>
 
@@ -30,15 +45,21 @@
                             @csrf
                             @method('PUT')
                             <div class="field-group flex gap-5">
-                                <div class="bg-white w-9/12 text-black rounded-lg flex items-center @error('slug') border-2 border-red-500 @enderror">
-                                    <div class="pl-3">https://bybu.cc/</div>
+                                <div class="bg-white w-full text-black rounded-lg flex items-center @error('slug') border-2 border-red-500 @enderror">
+                                    <div class="py-3 px-3 bg-gray-300 text-gray-600 font-bold rounded-md">https://bybu.cc/</div>
                                     <input type="text" placeholder="username" value="{{$user->slug}}" name="slug" class="py-3 w-full rounded-lg outine-none border-none focus:outline-none focus:border-none focus:ring-0">
+                                    @error('slug')
+                                        <div class="text-gray-500 w-1/3 flex items-center text-red-600">
+                                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                                            </svg>
+                                            <span class="ml-1">Not available</span>
+                                        </div>
+                                    @enderror
                                 </div>
-                                <button type="submit" class="bg-red-600 py-3 text-white rounded-lg w-full">Set URL</button>
+                                    
+                                <button type="submit" class="bg-red-600 py-3 text-white rounded-lg w-1/3">Set URL</button>
                             </div>
-                            @error('slug')
-                                <div class="mt-1 text-gray-500">Username not available</div>
-                            @enderror
                         </form>
                         
                         <!-- Update Details -->
@@ -74,17 +95,17 @@
 
             <div class="h-screen w-1/3 bg-gray-900">
                 <div class="flex p-5 justify-between items-center bg-gray-800 h-16">
-                    <div class="border-2 border-gray-700 rounded-md py-1"> 
-                        <span class="bg-gray-700 px-4 py-2 rounded-md">Your link</span>
-                        <span class="ml-2 pl-4 py-1">https://bybu.cc/ </span>
-                        <span class="text-red-500 pr-5 font-bold py-1">{{$user->slug}}</span>
+                    <div class="border-2 border-gray-700 rounded-md flex"> 
+                        <span class="bg-gray-700 px-4 py-2 rounded-sm">Your link</span>
+                        <div class="ml-2 pl-4 py-2">https://bybu.cc/</div>
+                        <span class="text-red-500 pr-5 font-bold py-2">{{$user->slug}}</span>
                     </div>
                     <a href="#" class="text-sm bg-red-600 px-4 py-1 rounded-md">Share</a>
                 </div>
 
                 <div class="w-3/5 mx-auto h-3/4 pt-20">
                     <div class="border-4 border-gray-200 rounded-3xl h-full p-3" style="background: url('/images/bg.jpg');background-size: cover; " >
-                        <img class="h-32 w-32 rounded-full shadow-xl" src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80" alt="">
+                        <img class="h-32 w-32 rounded-full shadow-xl" src="/avatars/{{$user->avatar}}" alt="{{$user->name}}">
                         <div class="font-bold mt-3 pl-4">Vimal Bharti</div>
 
                         <div class="social-links mt-20 grid grid-cols-2 gap-4">

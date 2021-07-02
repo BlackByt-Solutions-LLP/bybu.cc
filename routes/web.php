@@ -25,10 +25,13 @@ Route::get('/dashboard', function () {
 
 require __DIR__.'/auth.php';
 
-Route::get('setting', [PagesController::class, 'setting'])->name('setting');
+Route::group(['middleware' => 'auth'], function(){
+    Route::get('setting', [PagesController::class, 'setting'])->name('setting');
+    Route::get('dashboard', [PagesController::class, 'dashboard'])->name('dashboard');
+    Route::put('update', [UserController::class, 'updateAccount'])->name('updateAccount');
+    Route::put('avatar', [UserController::class, 'updateAvatar'])->name('updateAvatar');
+});
 
-Route::get('dashboard', [PagesController::class, 'dashboard'])->name('dashboard')->middleware(['auth']);
+Route::get('/{slug}', [PagesController::class, 'profile'])->name('profile');
 
 Route::get('welcome', [PagesController::class, 'welcome'])->name('welcome');
-
-Route::put('update', [UserController::class, 'updateAccount'])->name('updateAccount');
