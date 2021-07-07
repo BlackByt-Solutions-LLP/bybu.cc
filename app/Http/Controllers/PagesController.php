@@ -41,6 +41,12 @@ class PagesController extends Controller
     public function profile(User $slug){
         return view('profile', compact('slug'));
     }
+
+    public function adminDashboard()
+    {
+        $layouts = Layout::all();
+        return view('Admin.index', compact('layouts'));
+    }
     
 
 }

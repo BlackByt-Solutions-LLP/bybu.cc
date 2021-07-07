@@ -22,6 +22,7 @@ class Layout extends Model
         'userDetailsDiv',
         'userNameDiv',
         'userName',
+        'userAbout',
         'linksContainer',
         'linksDiv',
         'linkIcon',

@@ -27,6 +27,7 @@ class CreateLayoutsTable extends Migration
             $table->string('userDetailsDiv')->nullable();
             $table->string('userNameDiv')->nullable();
             $table->string('userName')->nullable();
+            $table->text('userAbout')->nullable();
 
             $table->string('linksContainer')->nullable();
             $table->string('linksDiv')->nullable();
@@ -46,6 +47,7 @@ class CreateLayoutsTable extends Migration
             'userDetailsDiv' => 'bg-white rounded-md p-6 -mt-12',
             'userNameDiv' => 'flex flex-col items-center',
             'userName' => 'font-bold mt-3 pl-4 uppercase text-gray-800',
+            'userAbout' => 'text-gray-600 text-sm text-center mt-2',
             'linksContainer' => 'mt-12',
             'linksDiv' => 'social-links flex rounded-xl mb-4 gap-2',
             'linkIcon' => 'icon w-1/4 justify-center flex rounded-md py-2 bg-blue-400',

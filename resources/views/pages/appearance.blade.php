@@ -33,45 +33,19 @@
                         <div class="ml-2 pl-4 py-2">https://bybu.cc/</div>
                         <span class="text-red-500 pr-5 font-bold py-2">{{$user->slug}}</span>
                         <div class="pr-2 py-2">
+                            @isset($user->slug)
                             <a href="{{route('profile', $user->slug)}}" target="_blank">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-                            </svg>
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                                </svg>
                             </a>
+                            @endisset
                         </div>
                     </div>
                     <a href="#" class="text-sm bg-red-600 px-4 py-1 rounded-md">Share</a>
                 </div>
 
-                <!-- 
-                    ================= PREVIEW ===============
-                -->
-
-                <!-- <div class="h-full p-12 relative" style="background: url('{{$user->layout->bgImage}}');background-size: cover; " >
-                        <div class="{{ $user->layout->profileImageDiv }}">
-                            <img class="{{ $user->layout->profileImage }}" src="/avatars/{{$user->avatar}}" alt="{{$user->name}}">
-                        </div>
-                        <div class="{{ $user->layout->userNameDiv }}">
-                            <div class="{{ $user->layout->userName }}">{{$user->name}}</div>
-                        </div>
-                        
-                        <div class="{{ $user->layout->linksContainer }} linksContainer">
-                            @foreach($links as $link)
-                            <div class="{{ $user->layout->linksDiv }}">
-                                <div class="{{ $user->layout->linkIcon }}">{{$link->icon}}</div>
-                                <div class="{{ $user->layout->linkText }}">{{$link->link}}</div>
-                            </div>
-                            @endforeach
-                        </div>
-
-                        
-                        <div class="bybu-watermark absolute bottom-5 left-0 right-0 flex justify-center font-bold uppercase">
-                            <img src="images/logo.png" class="h-6">
-                            <span class="ml-2">Bybu</span>
-                        </div>
-                    </div>
-                </div>  -->
-
+                <!-- Profile Preview -->
                 <div class="p-12 relative min-h-screen" style="background: url('{{$user->layout->bgImage}}');background-size: cover; " >
                     <div class="{{ $user->layout->profileImageDiv }}" id="profileImageDiv">
                         <img class="{{ $user->layout->profileImage }}" id="profileImage" src="/avatars/{{$user->avatar}}" alt="{{$user->name}}">
@@ -79,7 +53,7 @@
                     <div class="{{ $user->layout->userDetailsDiv }}" id="userDetailsDiv">
                         <div class="{{ $user->layout->userNameDiv }}" id="userNameDiv">
                             <div class="{{ $user->layout->userName }}" id="userName">{{$user->name}}</div>
-                            <div class="about text-gray-600 text-sm text-center mt-2" id="userAbout">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ab veniam magnam consequuntur iste amet perspiciatis, doloremque minima facere error debitis iure culpa blanditiis dolor cumque molestias quo quibusdam pariatur esse?</div>
+                            <div class="{{ $user->layout->userAbout }}" id="userAbout">{{$user->about}}</div>
                         </div>
                     </div>
                     
@@ -94,7 +68,7 @@
 
                     <!-- Bybu watermark -->
                     <div class="bybu-watermark absolute bottom-5 left-0 right-0 flex justify-center font-bold uppercase">
-                        <img src="images/logo.png" class="h-6">
+                        <img src="/images/logo.png" class="h-6">
                         <span class="ml-2">Bybu</span>
                     </div>
                 </div> 

@@ -18,6 +18,7 @@ class CreateUsersTable extends Migration
         Schema::create('users', function (Blueprint $table) {
             $table->id();
             $table->string('name');
+            $table->text('about')->nullable();;
             $table->string('slug')->nullable()->unique();
             $table->string('website')->nullable();
             $table->integer('layout_id')->default(1);
@@ -33,7 +34,8 @@ class CreateUsersTable extends Migration
         User::create([
             'name' => 'Vimal Bharti',
             'email' => 'vimal@gmail.com',
-            'password' => Hash::make('password')
+            'password' => Hash::make('password'),
+            'about' => 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ab veniam magnam consequuntur iste amet perspiciatis, doloremque minima facere error'
         ]);
     }
 

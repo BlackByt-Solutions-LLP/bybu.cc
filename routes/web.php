@@ -43,3 +43,6 @@ Route::group(['middleware' => 'auth'], function(){
 Route::get('/{slug}', [PagesController::class, 'profile'])->name('profile');
 
 Route::get('welcome', [PagesController::class, 'welcome'])->name('welcome');
+
+
+Route::get('admin/dashboard', [PagesController::class, 'adminDashboard'])->name('adminDashboard');
