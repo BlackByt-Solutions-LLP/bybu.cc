@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\LinkController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\PagesController;
 
@@ -27,7 +28,14 @@ require __DIR__.'/auth.php';
 
 Route::group(['middleware' => 'auth'], function(){
     Route::get('setting', [PagesController::class, 'setting'])->name('setting');
+
     Route::get('dashboard', [PagesController::class, 'dashboard'])->name('dashboard');
+    
+    Route::resource('links', LinkController::class);
+
+    Route::get('appearance', [PagesController::class, 'allLayout'])->name('allLayout');
+    Route::put('appearance', [PagesController::class, 'updateLayout'])->name('updateLayout');
+
     Route::put('update', [UserController::class, 'updateAccount'])->name('updateAccount');
     Route::put('avatar', [UserController::class, 'updateAvatar'])->name('updateAvatar');
 });

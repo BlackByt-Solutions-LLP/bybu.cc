@@ -2,11 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Link;
+use App\Models\Layout;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
 
-class LinkController extends Controller
+class LayoutController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -36,27 +35,16 @@ class LinkController extends Controller
      */
     public function store(Request $request)
     {
-        $request->validate([
-            'icon' => 'required',
-            'link' => 'required'
-        ]);
-
-        $link = new Link;
-        $link->icon = $request['icon'];
-        $link->link = $request['link'];
-        $link->user_id = Auth::user()->id;
-        $link->save();
-
-        return back();
+        //
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Link  $link
+     * @param  \App\Models\Layout  $layout
      * @return \Illuminate\Http\Response
      */
-    public function show(Link $link)
+    public function show(Layout $layout)
     {
         //
     }
@@ -64,10 +52,10 @@ class LinkController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Link  $link
+     * @param  \App\Models\Layout  $layout
      * @return \Illuminate\Http\Response
      */
-    public function edit(Link $link)
+    public function edit(Layout $layout)
     {
         //
     }
@@ -76,10 +64,10 @@ class LinkController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Link  $link
+     * @param  \App\Models\Layout  $layout
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Link $link)
+    public function update(Request $request, Layout $layout)
     {
         //
     }
@@ -87,10 +75,10 @@ class LinkController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Link  $link
+     * @param  \App\Models\Layout  $layout
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Link $link)
+    public function destroy(Layout $layout)
     {
         //
     }

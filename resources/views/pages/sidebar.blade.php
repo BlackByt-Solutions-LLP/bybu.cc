@@ -1,6 +1,6 @@
 <div class="w-20 h-screen flex flex-col justify-between items-center py-4 bg-gray-900">
     <div>
-        <img src="{{asset('images/logo.png')}}" class="w-8">
+        <a href="/"><img src="{{asset('images/logo.png')}}" class="w-8"></a>
     </div>
     <div class="space-y-5 flex flex-col justify-between items-center">
         <button class="bg-gray-800 rounded-full p-1 hover:bg-gray-900">
