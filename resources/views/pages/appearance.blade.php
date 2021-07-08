@@ -2,7 +2,7 @@
 
     <div class="text-white h-screen">
 
-        <div class="flex justify-between items-center ">
+        <div class="flex justify-between items-center relative">
 
             @include('pages.sidebar')
 
@@ -26,7 +26,7 @@
 
             </div>
 
-            <div class="h-screen w-1/3 bg-gray-900 overflow-y-auto">
+            <div class="h-screen w-1/3 bg-gray-900 overflow-y-hidden relative">
                 <div class="flex p-5 justify-between items-center bg-gray-800 h-16">
                     <div class="border-2 border-gray-700 rounded-md flex"> 
                         <span class="bg-gray-700 px-4 py-2 rounded-sm">Your link</span>
@@ -46,7 +46,7 @@
                 </div>
 
                 <!-- Profile Preview -->
-                <div class="p-12 relative min-h-screen" style="background: url('{{$user->layout->bgImage}}');background-size: cover; " >
+                <div class="p-12 h-screen overflow-y-auto" style="background: url('{{$user->layout->bgImage}}');background-size: cover; " >
                     <div class="{{ $user->layout->profileImageDiv }}" id="profileImageDiv">
                         <img class="{{ $user->layout->profileImage }}" id="profileImage" src="/avatars/{{$user->avatar}}" alt="{{$user->name}}">
                     </div>
@@ -66,11 +66,6 @@
                         @endforeach
                     </div>
 
-                    <!-- Bybu watermark -->
-                    <div class="bybu-watermark absolute bottom-5 left-0 right-0 flex justify-center font-bold uppercase">
-                        <img src="/images/logo.png" class="h-6">
-                        <span class="ml-2">Bybu</span>
-                    </div>
                 </div> 
 
             </div> 

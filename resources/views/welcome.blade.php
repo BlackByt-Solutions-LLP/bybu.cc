@@ -196,8 +196,17 @@
                 <div class="text-gray-300 mb-6 text-right">
                     Email:  business@blackbyt.com
                 </div>
-                <div>
-                    <img src="{{asset('images/social.png')}}">
+                <div class="social-links text-white flex gap-4">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4" />
+                    </svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z" />
+                    </svg>
+
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-96 w-96 text-yellow-400" fill="none" viewBox="0 0 33.65 37.8" stroke="currentColor">
+                        <path class="cls-1" d="M21.09,2.6H27.2s1.06,9.94,10.12,9V18S32.5,19.72,27.15,14.3l.41,14.36c-.06.55-.8,6.69-6.07,9.46a11.71,11.71,0,0,1-15.16-4A11.61,11.61,0,0,1,8.07,19.93c3.95-3.9,9.34-3.25,10-3.16V23A5.74,5.74,0,0,0,12.23,24a5.66,5.66,0,0,0-.75,7.25A5.54,5.54,0,0,0,18,33.42a5.51,5.51,0,0,0,3.37-4.65Z" transform="translate(-4.18 -2.1)"/>
+                    </svg>
                 </div>
             </div>
         </div>

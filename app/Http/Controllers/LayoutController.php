@@ -35,7 +35,25 @@ class LayoutController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $layout = new Layout;
+        $layout->primaryColor = $request['primaryColor'];
+        $layout->secondaryColor = $request['secondaryColor'];
+        $layout->bgImage = $request['bgImage'];
+        $layout->bgColor = $request['bgColor'];
+        $layout->profileImageDiv = $request['profileImageDiv'];
+        $layout->profileImage = $request['profileImage'];
+        $layout->userDetailsDiv = $request['userDetailsDiv'];
+        $layout->userNameDiv = $request['userNameDiv'];
+        $layout->userName = $request['userName'];
+        $layout->userAbout = $request['userAbout'];
+        $layout->linksContainer = $request['linksContainer'];
+        $layout->linksDiv = $request['linksDiv'];
+        $layout->linkIcon = $request['linkIcon'];
+        $layout->linkText = $request['linkText'];
+
+        $layout->save();
+
+        return back();
     }
 
     /**

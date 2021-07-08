@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LinkController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\PagesController;
+use App\Http\Controllers\LayoutController;
 
 /*
 |--------------------------------------------------------------------------
@@ -44,5 +45,7 @@ Route::get('/{slug}', [PagesController::class, 'profile'])->name('profile');
 
 Route::get('welcome', [PagesController::class, 'welcome'])->name('welcome');
 
+Route::resource('layouts', LayoutController::class);
 
 Route::get('admin/dashboard', [PagesController::class, 'adminDashboard'])->name('adminDashboard');
+Route::get('admin/test', [PagesController::class, 'adminTesting'])->name('adminTesting');

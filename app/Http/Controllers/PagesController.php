@@ -47,6 +47,11 @@ class PagesController extends Controller
         $layouts = Layout::all();
         return view('Admin.index', compact('layouts'));
     }
+
+    public function adminTesting()
+    {
+        return view('Admin.test');
+    }
     
 
 }

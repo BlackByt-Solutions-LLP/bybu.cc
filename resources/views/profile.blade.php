@@ -11,7 +11,7 @@
                     <div class="bg-white rounded-md p-6 -mt-12" id="userDetailsDiv">
                         <div class="{{ $slug->layout->userNameDiv }}" id="userNameDiv">
                             <div class="{{ $slug->layout->userName }}" id="userName">{{$slug->name}}</div>
-                            <div class="about text-gray-600 text-sm text-center mt-2" id="userAbout">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ab veniam magnam consequuntur iste amet perspiciatis, doloremque minima facere error debitis iure culpa blanditiis dolor cumque molestias quo quibusdam pariatur esse?</div>
+                            <div class="about text-gray-600 text-sm text-center mt-2" id="userAbout">{{$slug->about}}</div>
                         </div>
                     </div>
                     
